@@ -134,6 +134,11 @@ public class PatitoParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitPrograma(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitPrograma(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ProgramaContext programa() throws RecognitionException {
@@ -212,6 +217,11 @@ public class PatitoParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitVars(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitVars(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final VarsContext vars() throws RecognitionException {
@@ -277,6 +287,11 @@ public class PatitoParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitVarsDecl(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitVarsDecl(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final VarsDeclContext varsDecl() throws RecognitionException {
@@ -339,6 +354,11 @@ public class PatitoParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitTipo(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitTipo(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final TipoContext tipo() throws RecognitionException {
@@ -390,6 +410,11 @@ public class PatitoParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitFuncs(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitFuncs(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -454,6 +479,11 @@ public class PatitoParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitFuncion(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitFuncion(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -533,6 +563,11 @@ public class PatitoParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitParametros(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitParametros(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ParametrosContext parametros() throws RecognitionException {
@@ -592,6 +627,11 @@ public class PatitoParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitParametro(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitParametro(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ParametroContext parametro() throws RecognitionException {
@@ -640,6 +680,11 @@ public class PatitoParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitBloque(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitBloque(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -709,6 +754,11 @@ public class PatitoParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitEstatuto(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitEstatuto(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -787,6 +837,11 @@ public class PatitoParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitAsignacion(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitAsignacion(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final AsignacionContext asignacion() throws RecognitionException {
@@ -842,6 +897,11 @@ public class PatitoParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitCondicion(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitCondicion(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -911,6 +971,11 @@ public class PatitoParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitCiclo(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitCiclo(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final CicloContext ciclo() throws RecognitionException {
@@ -971,6 +1036,11 @@ public class PatitoParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitEscritura(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitEscritura(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1041,6 +1111,11 @@ public class PatitoParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitLlamadaFunc(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitLlamadaFunc(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final LlamadaFuncContext llamadaFunc() throws RecognitionException {
@@ -1105,6 +1180,11 @@ public class PatitoParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitArgumentos(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitArgumentos(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ArgumentosContext argumentos() throws RecognitionException {
@@ -1167,6 +1247,11 @@ public class PatitoParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitExpresion(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitExpresion(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1239,6 +1324,11 @@ public class PatitoParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitExp(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitExp(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1316,6 +1406,11 @@ public class PatitoParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitTermino(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitTermino(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final TerminoContext termino() throws RecognitionException {
@@ -1391,6 +1486,11 @@ public class PatitoParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof PatitoListener ) ((PatitoListener)listener).exitFactor(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof PatitoVisitor ) return ((PatitoVisitor<? extends T>)visitor).visitFactor(this);
+			else return visitor.visitChildren(this);
 		}
 	}
 

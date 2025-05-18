@@ -1,15 +1,11 @@
-program ifsanidados;
-var x : int;
+program test;
+var contador : int;
+void mostrar() :
+{
+    print(contador);
+}
 main {
-    x = 5;
-    if (x > 0) {
-        if (x < 10) {
-            print("Entre 1 y 9");
-        } else {
-            print("10 o más");
-        }
-    } else {
-        print("Cero o negativo");
-    }
+    contador = 7;
+    mostrar();
 }
 end

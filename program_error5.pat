@@ -1,4 +1,5 @@
-program error5;
-var x : int;
-x = 5;
+program test;
+main {
+    iniciar();       // Función 'iniciar' no existe
+}
 end

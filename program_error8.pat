@@ -1,9 +1,10 @@
-program error8;
-var x : int;
+program test;
+void definir() :
+var a : int;
+{
+    a = 10;
+}
 main {
-    x = 10;
-    if x > 5 {
-        print("Mayor a cinco");
-    }
+    print(a);        // 'a' es local a 'definir', no visible aquí
 }
 end

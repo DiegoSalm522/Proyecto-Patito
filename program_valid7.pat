@@ -1,10 +1,10 @@
-program funciones;
-void saludar(nombre : int) :
-{
-    print("Bienvenido");
-    print(nombre);
-}
+program test;
+var x : int;
 main {
-    saludar(42);
+    x = 3;
+    while (x != 0) do {
+        print(x);
+        x = x - 1;
+    }
 }
 end

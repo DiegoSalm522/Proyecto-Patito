@@ -1,6 +1,5 @@
-program error1;
-var x : int
+program test;
 main {
-    x = 5;
+    x = 10;         // 'x' no fue declarada
 }
 end

@@ -1,9 +1,9 @@
-program intfloat;
-var a : float;
-var b : int;
+program test;
+var edad : int;
 main {
-    b = 10;
-    a = b + 3.5;
-    print(a);
+    edad = 18;
+    if (edad > 17) {
+        print("Mayor de edad");
+    }
 }
 end

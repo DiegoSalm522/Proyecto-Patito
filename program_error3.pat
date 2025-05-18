@@ -1,5 +1,6 @@
-program error3;
+program test;
+var a : int;
 main {
-    print((5 + 2;
+    a = 3.5;         // 'float' no puede asignarse a 'int'
 }
 end

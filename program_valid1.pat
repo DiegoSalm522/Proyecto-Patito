@@ -1,5 +1,7 @@
 program test;
+var x : int;
 main {
-    print("Hola Mundo");
+    x = 5;
+    print(x);
 }
 end

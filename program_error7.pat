@@ -1,7 +1,9 @@
-program error7;
-var x : int;
-x = 10;
+program test;
+void imprimir(a : int, a : float) :   // Parámetro duplicado
+{
+    print(a);
+}
 main {
-    print(x);
+    imprimir(3, 4.5);
 }
 end

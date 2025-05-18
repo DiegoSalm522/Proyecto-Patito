@@ -1,9 +1,9 @@
-program operaciones;
-var x, y, z : int;
+program test;
+void sumar(a : int, b : int) :
+{
+    print(a + b);
+}
 main {
-    x = 5;
-    y = 3;
-    z = x * (y + 2);
-    print(z);
+    sumar(3, 4);
 }
 end

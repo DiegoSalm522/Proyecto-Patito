@@ -1,7 +1,9 @@
-program error6;
+program test;
+void mostrar(a : int, b : int) :
+{
+    print(a + b);
+}
 main {
-    while (x > 0) {
-        x = x - 1;
-    }
+    mostrar(5);       // Falta un argumento
 }
 end

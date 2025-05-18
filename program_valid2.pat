@@ -1,8 +1,8 @@
-program ejemplo;
-var x, y : int;
+program test;
+var a : int;
+var b : float;
 main {
-    x = 10;
-    y = x + 5;
-    print(y);
+    b = a + 3.2;
+    print(b);
 }
 end
