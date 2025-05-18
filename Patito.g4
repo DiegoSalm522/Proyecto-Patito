@@ -1,4 +1,4 @@
-lexer grammar Patito;
+grammar Patito;
 
 // ====== TOKENS ======
 // Palabras clave
@@ -45,3 +45,43 @@ COMMA       : ',';
 // Ignorados
 WS          : [ \t\r\n]+ -> skip;
 LINE_COMMENT: '//' ~[\r\n]* -> skip;
+
+// ====== PARSER ======
+programa : PROGRAM ID SEMICOLON vars? funcs? MAIN bloque END ;
+
+vars : (VAR varsDecl)+ ;
+varsDecl : ID (COMMA ID)* COLON tipo SEMICOLON ;
+
+tipo : INT | FLOAT ;
+
+funcs : funcion+ ;
+funcion : VOID ID LPAREN parametros? RPAREN COLON vars? bloque ;
+
+parametros : parametro (COMMA parametro)* ;
+parametro : ID COLON tipo ;
+
+bloque : LBRACE estatuto* RBRACE ;
+
+estatuto
+    : asignacion
+    | condicion
+    | ciclo
+    | escritura
+    | llamadaFunc
+    ;
+
+asignacion : ID EQUAL expresion SEMICOLON ;
+
+condicion : IF LPAREN expresion RPAREN bloque (ELSE bloque)? ;
+
+ciclo : WHILE LPAREN expresion RPAREN DO bloque ;
+
+escritura : PRINT LPAREN expresion (COMMA expresion)* RPAREN SEMICOLON ;
+
+llamadaFunc : ID LPAREN argumentos? RPAREN SEMICOLON ;
+argumentos : expresion (COMMA expresion)* ;
+
+expresion : exp ( (GT | LT | NEQ) exp )? ;
+exp : termino ( (PLUS | MINUS) termino )* ;
+termino : factor ( (MULT | DIV) factor )* ;
+factor : LPAREN expresion RPAREN | PLUS factor | MINUS factor | CTE_INT | CTE_FLOAT | CTE_STRING | ID ;
